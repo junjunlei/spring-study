@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--属性注入-->
+    <bean id="helloWorld" class="org.jerry.beans.HelloWorld">
+        <property name="userName" value="spring" />
+    </bean>
+    <!--构造器注入-->
+    <bean id="car" class="org.jerry.beans.Car">
+        <constructor-arg value="1000" index="1"/>
+        <constructor-arg value="宝马" index="0"/>
+        <constructor-arg value="上海" index="2"/>
+    </bean>
+    <!--若一个bean有多个构造，注入可指定参数顺序、数据类型-->
+    <bean id="car1" class="org.jerry.beans.Car">
+        <constructor-arg value="奔驰" type="java.lang.String"/>
+        <constructor-arg value="2000" type="java.lang.Double"/>
+        <constructor-arg value="北京" type="java.lang.String"/>
+        <constructor-arg value="500" type="java.lang.Integer"/>
+    </bean>
+</beans>
